@@ -13,6 +13,46 @@ import { LuHelpingHand } from "react-icons/lu";
 import TopBar from "@/components/topbar";
 import Title from "@/components/title";
 import ItemCard from "@/components/itemCard";
+import GuestReviewsCarousel from "@/components/reviewCarousel";
+
+const sampleReviews = [
+  {
+    name: "John Doe",
+    rating: 4.5,
+    review:
+      "Great experience! The service was excellent and staff was very friendly.",
+  },
+  {
+    name: "Jane Smith",
+    rating: 5,
+    review:
+      "Absolutely fantastic! I would highly recommend this place to anyone.",
+  },
+  {
+    name: "Joshua Tan",
+    rating: 3.5,
+    review:
+      "Acceptable service. Slow to respond though.",
+  },
+  {
+    name: "Johnathan Doe",
+    rating: 4,
+    review:
+      "Good experience! Helpful staff.",
+  },
+  {
+    name: "Joanne Lim",
+    rating: 4,
+    review:
+      "Absolutely fantastic! I would highly recommend this place to anyone.",
+  },
+  {
+    name: "Sally Tan",
+    rating: 3.5,
+    review:
+      "Good.",
+  },
+];
 
 const Home = () => {
   return (
@@ -20,7 +60,13 @@ const Home = () => {
       <TopBar active="home" />
       <div className="relative text-center">
         <div className="h-56 sm:h-64 xl:h-80 2xl:h-96">
-          <Carousel pauseOnHover slideInterval={3000}>
+          <Carousel
+            pauseOnHover
+            slideInterval={3000}
+            indicators={false}
+            leftControl="&nbsp;"
+            rightControl="&nbsp;"
+          >
             <Image
               className="blur-sm hover:blur-none"
               src="/carousel/1.jpg"
@@ -42,15 +88,16 @@ const Home = () => {
       <div className="py-6 flex-auto w-11/12 mx-auto">
         <Card className="w-80 md:w-full mx-auto">
           <h5 className="text-center text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
-          ABOUT US
+            ABOUT US
           </h5>
           <p className="text-center font-normal text-gray-700 dark:text-gray-400">
-          Only @ is dedicated to providing comprehensive real estate management
-          services tailored to meet the unique needs of each property.
-          <br />
-          <br />
-          Our team is committed to ensuring the highest standards of care and
-          maintenance for all properties under our management.
+            Only @ is dedicated to providing comprehensive real estate
+            management services tailored to meet the unique needs of each
+            property.
+            <br />
+            <br />
+            Our team is committed to ensuring the highest standards of care and
+            maintenance for all properties under our management.
           </p>
         </Card>
       </div>
@@ -96,6 +143,15 @@ const Home = () => {
                 description="Short description of service here. Some additional details as well."
               />
             </div>
+          </div>
+        </div>
+        <div className="py-6">
+          <h5 className="text-center pb-4 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
+            GUEST REVIEWS
+          </h5>
+          {/* <div className="h-2/5 sm:h-64 xl:h-80 2xl:h-96"> */}
+          <div className="h-56 sm:h-64 xl:h-80 2xl:h-96 max-w-4xl mx-auto">
+            <GuestReviewsCarousel reviews={sampleReviews} />
           </div>
         </div>
       </div>
