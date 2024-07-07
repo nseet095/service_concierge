@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { Carousel } from "flowbite-react";
+import { Card } from "flowbite-react";
+
 import { GiVacuumCleaner, GiCroissant } from "react-icons/gi";
 import { FaTools } from "react-icons/fa";
 import { IoHomeSharp } from "react-icons/io5";
@@ -37,6 +39,21 @@ const Home = () => {
         </div>
         <Title title="Service Concierge" subtitle="Some witty quote" />
       </div>
+      <div className="py-6 flex-auto w-11/12 mx-auto">
+        <Card className="w-80 md:w-full mx-auto">
+          <h5 className="text-center text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
+          ABOUT US
+          </h5>
+          <p className="text-center font-normal text-gray-700 dark:text-gray-400">
+          Only @ is dedicated to providing comprehensive real estate management
+          services tailored to meet the unique needs of each property.
+          <br />
+          <br />
+          Our team is committed to ensuring the highest standards of care and
+          maintenance for all properties under our management.
+          </p>
+        </Card>
+      </div>
       <div className="py-6">
         <h5 className="text-center pb-4 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
           OUR SERVICES
@@ -44,16 +61,40 @@ const Home = () => {
         <div className="py-3 px-5">
           <div className="grid-cols-3 justify-center sm:grid-cols-1 md:flex">
             <div className="max-w-xs mx-auto">
-              <ItemCard Icon={GiVacuumCleaner} title="Cleaning" description="Short description of service here. Some additional details as well." />
-              <ItemCard Icon={GiCroissant} title="Breakfast" description="Short description of service here. Some additional details as well." />
+              <ItemCard
+                Icon={GiVacuumCleaner}
+                title="Cleaning"
+                description="Short description of service here. Some additional details as well."
+              />
+              <ItemCard
+                Icon={GiCroissant}
+                title="Breakfast"
+                description="Short description of service here. Some additional details as well."
+              />
             </div>
             <div className="max-w-xs mx-auto">
-              <ItemCard Icon={FaTools} title="Repairs" description="Short description of service here. Some additional details as well." />
-              <ItemCard Icon={IoHomeSharp} title="Real Estate Sales" description="Short description of service here. Some additional details as well." />
+              <ItemCard
+                Icon={FaTools}
+                title="Repairs"
+                description="Short description of service here. Some additional details as well."
+              />
+              <ItemCard
+                Icon={IoHomeSharp}
+                title="Real Estate Sales"
+                description="Short description of service here. Some additional details as well."
+              />
             </div>
             <div className="max-w-xs mx-auto">
-              <ItemCard Icon={FaPersonShelter} title="House Sitting Services" description="Short description of service here. Some additional details as well." />
-              <ItemCard Icon={LuHelpingHand} title="Borrowing Items" description="Short description of service here. Some additional details as well." />
+              <ItemCard
+                Icon={FaPersonShelter}
+                title="House Sitting Services"
+                description="Short description of service here. Some additional details as well."
+              />
+              <ItemCard
+                Icon={LuHelpingHand}
+                title="Borrowing Items"
+                description="Short description of service here. Some additional details as well."
+              />
             </div>
           </div>
         </div>

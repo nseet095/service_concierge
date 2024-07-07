@@ -19,9 +19,9 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${inter.className} bg-slate-100 dark:bg-slate-900`}>
         {children}
-        <DarkThemeToggle className="absolute bottom-auto right-4 opacity-15 transition hover:opacity-100 z-10" />
+        <DarkThemeToggle className="fixed bottom-32 right-4 opacity-15 transition hover:opacity-100 z-10" />
       </body>
-      <Footer container className="fixed inset-x-0 bottom-0">
+      <Footer container className="">
       <div className="w-full sm:flex sm:items-center sm:justify-between ">
           <Footer.Copyright by="Service Concierge" year={2024} />
           <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
