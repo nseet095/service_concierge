@@ -102,7 +102,7 @@ export default function RootLayout({ children }) {
                     />
                   </div>
                 </div>
-                <div>
+                <div className="flex-1">
                   <Label
                     htmlFor="subject"
                     className="block mb-2 text-base font-medium text-gray-900 dark:text-gray-300"
@@ -134,12 +134,11 @@ export default function RootLayout({ children }) {
                     placeholder="Leave a comment..."
                   />
                 </div>
-                <button
+                <Button
                   type="submit"
-                  className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary-700 sm:w-full hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                 >
-                  Send message
-                </button>
+                  Submit
+                </Button>
               </form>
             </div>
           </section>

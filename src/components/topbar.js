@@ -25,9 +25,9 @@ const TopBar = ({active}) => {
       <Navbar.Collapse>
         <Navbar.Link href="/" active={active === "home"}>Home</Navbar.Link>
         <Navbar.Link href="/about" active={active === "about"}>About</Navbar.Link>
-        <Navbar.Link href="#" active={active === "services"}>Services</Navbar.Link>
-        <Navbar.Link href="#" active={active === "pricing"}>Pricing</Navbar.Link>
-        <Navbar.Link href="#" active={active === "contact"}>Contact</Navbar.Link>
+        <Navbar.Link href="/services" active={active === "services"}>Services</Navbar.Link>
+        <Navbar.Link href="/developments" active={active === "developments"}>Developments</Navbar.Link>
+        {/* <Navbar.Link href="#" active={active === "contact"}>Contact</Navbar.Link> */}
       </Navbar.Collapse>
     </Navbar>
   );
