@@ -15,7 +15,7 @@ const TopBar = ({active}) => {
           alt="Logo"
         />
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white text-black">
-          Service Concierge
+          Only @
         </span>
       </Navbar.Brand>
       <div className="flex md:order-2">
@@ -23,8 +23,8 @@ const TopBar = ({active}) => {
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
-        <Navbar.Link href="#" active={active === "home"}>Home</Navbar.Link>
-        <Navbar.Link href="#" active={active === "about"}>About</Navbar.Link>
+        <Navbar.Link href="/" active={active === "home"}>Home</Navbar.Link>
+        <Navbar.Link href="/about" active={active === "about"}>About</Navbar.Link>
         <Navbar.Link href="#" active={active === "services"}>Services</Navbar.Link>
         <Navbar.Link href="#" active={active === "pricing"}>Pricing</Navbar.Link>
         <Navbar.Link href="#" active={active === "contact"}>Contact</Navbar.Link>

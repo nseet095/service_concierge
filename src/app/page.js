@@ -83,23 +83,7 @@ const Home = () => {
             />
           </Carousel>
         </div>
-        <Title title="Service Concierge" subtitle="Some witty quote" />
-      </div>
-      <div className="py-6 flex-auto w-11/12 mx-auto">
-        <Card className="w-80 md:w-full mx-auto">
-          <h5 className="text-center text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
-            ABOUT US
-          </h5>
-          <p className="text-center font-normal text-gray-700 dark:text-gray-400">
-            Only @ is dedicated to providing comprehensive real estate
-            management services tailored to meet the unique needs of each
-            property.
-            <br />
-            <br />
-            Our team is committed to ensuring the highest standards of care and
-            maintenance for all properties under our management.
-          </p>
-        </Card>
+        <Title title="Only @" subtitle="Some witty quote" />
       </div>
       <div className="py-6">
         <h5 className="text-center pb-4 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
@@ -153,6 +137,11 @@ const Home = () => {
           <div className="h-56 sm:h-64 xl:h-80 2xl:h-96 max-w-4xl mx-auto">
             <GuestReviewsCarousel reviews={sampleReviews} />
           </div>
+        </div>
+        <div className="py-6">
+        <h5 className="text-center pb-4 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
+            OUR LOCATIONS
+          </h5>
         </div>
       </div>
     </>
