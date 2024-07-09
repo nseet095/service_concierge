@@ -1,7 +1,40 @@
+"use client"
+import React, { useState } from "react";
+import { Inter } from "next/font/google";
+
 import { Button, Label, TextInput, Textarea } from "flowbite-react";
+import { PhoneNumberUtil } from 'google-libphonenumber';
+import { PhoneInput } from 'react-international-phone';
+import 'react-international-phone/style.css';
+
+const inter = Inter({ subsets: ["latin"] });
+
+const phoneUtil = PhoneNumberUtil.getInstance();
+
+const isPhoneValid = (phone) => {
+  try {
+    return phoneUtil.isValidNumber(phoneUtil.parseAndKeepRawInput(phone));
+  } catch (error) {
+    return false;
+  }
+};
 
 const ContactForm = () => {
   /* TODO: POST to endpoint */
+
+  const [phone, setPhone] = useState('');
+
+  const submitForm = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target)
+    console.log(formData.get('email'));
+    console.log(formData.get(phone));
+    console.log(formData.get('firstName'));
+    console.log(formData.get('lastName'));
+    console.log(formData.get('subject'));
+    console.log(formData.get('message'));
+  }
+  
 
   return (
     <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
@@ -13,7 +46,12 @@ const ContactForm = () => {
         someone will be in touch with you very soon.
       </p>
       {/* TODO: POST to endpoint */}
-      <form action="#" className="space-y-8">
+      <form
+        onSubmit={submitForm}
+        className="space-y-8"
+        autoComplete="on"
+        action="post"
+      >
         <div className="flex flex-wrap gap-4">
           <div className="flex-1">
             <Label
@@ -24,7 +62,8 @@ const ContactForm = () => {
             <TextInput
               type="email"
               id="email"
-              className="text-gray-900 rounded-lg shadow-sm dark:placeholder-gray-400 dark:text-white dark:shadow-sm-light"
+              name="email"
+              className="text-gray-900 shadow-sm dark:placeholder-gray-400 dark:text-white dark:shadow-sm-light"
               placeholder="name@website.com"
               required
             />
@@ -34,13 +73,39 @@ const ContactForm = () => {
               htmlFor="phoneNo"
               className="block mb-2 text-base font-medium text-gray-900 dark:text-gray-300"
               value="Phone Number"
-            ></Label>
+            />
+            {/* <PhoneInput
+              defaultCountry="sg"
+              preferredCountries={["sg", "my"]}
+              value={phone}
+              countrySelectorStyleProps={{
+                buttonClassName:
+                  "p-0 text-gray-900 dark:hover:bg-slate-800 dark:bg-slate-700 dark:text-white dark:shadow-sm-light",
+                listItemClassName:
+                  "text-gray-900 dark:bg-slate-800 dark:text-white dark:shadow-sm-light dark:checked:bg-slate-1000",
+                dropdownStyleProps: {
+                  className:
+                    "text-gray-900 dark:bg-slate-800 dark:text-white dark:shadow-sm-light",
+                },
+              }}
+              // inputStyle={}
+              // inputClassName="text-gray-900 shadow-sm dark:placeholder-gray-400 dark:text-white dark:shadow-sm-light"
+              inputProps={{
+                className:
+                  "text-gray-900 dark:placeholder-gray-800 dark:text-white dark:bg-slate-700",
+                style: { font: inter },
+              }}
+              // className="text-gray-900 shadow-sm dark:placeholder-gray-400 dark:text-white dark:shadow-sm-light"
+              required
+              onChange={(phone) => setPhone(phone)}
+            /> */}
             <TextInput
               type="tel"
               id="phoneNo"
-              className="text-gray-900 rounded-lg shadow-sm dark:placeholder-gray-400 dark:text-white dark:shadow-sm-light"
+              className="text-gray-900 shadow-sm dark:placeholder-gray-400 dark:text-white dark:shadow-sm-light"
               placeholder="12345678"
               required
+
             />
           </div>
         </div>
@@ -54,7 +119,8 @@ const ContactForm = () => {
             <TextInput
               type="text"
               id="firstName"
-              className="text-gray-900 rounded-lg shadow-sm dark:placeholder-gray-400 dark:text-white dark:shadow-sm-light"
+              name="firstName"
+              className="text-gray-900 shadow-sm dark:placeholder-gray-400 dark:text-white dark:shadow-sm-light"
               placeholder="John"
               required
             />
@@ -67,8 +133,9 @@ const ContactForm = () => {
             />
             <TextInput
               type="text"
+              name="lastName"
               id="lastName"
-              className="text-gray-900 rounded-lg shadow-sm dark:placeholder-gray-400 dark:text-white dark:shadow-sm-light"
+              className="text-gray-900 shadow-sm dark:placeholder-gray-400 dark:text-white dark:shadow-sm-light"
               placeholder="Smith"
               required
             />
@@ -84,7 +151,8 @@ const ContactForm = () => {
           <TextInput
             type="text"
             id="subject"
-            className="text-gray-900 rounded-lg shadow-sm dark:placeholder-gray-400 dark:text-white dark:shadow-sm-light"
+            name="subject"
+            className="text-gray-900 shadow-sm dark:placeholder-gray-400 dark:text-white dark:shadow-sm-light"
             placeholder="Let us know how we can help you"
             required
           />
@@ -98,11 +166,12 @@ const ContactForm = () => {
           </Label>
           <Textarea
             id="message"
+            name="message"
             type="text"
             sizing="lg"
             rows={4}
             required
-            className="text-gray-900 rounded-lg shadow-sm dark:placeholder-gray-400 dark:text-white dark:shadow-sm-light resize-none"
+            className="text-gray-900 shadow-sm dark:placeholder-gray-400 dark:text-white dark:shadow-sm-light resize-none"
             placeholder="Leave a comment..."
           />
         </div>
