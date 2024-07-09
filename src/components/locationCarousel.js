@@ -1,6 +1,4 @@
-"use client"
-
-import { useState } from "react";
+import Image from "next/image";
 import { Carousel } from "flowbite-react";
 
 const carouselStyle = {
@@ -37,18 +35,13 @@ const carouselStyle = {
 };
 
 const LocationCarousel = ({ locations }) => {
-  const [openModal, setOpenModal] = useState(false);
-  
   return (
-    <Carousel
-      slide={false}
-      theme={carouselStyle}
-    >
+    <Carousel slide={false} theme={carouselStyle}>
       {locations.map((location, index) => {
         return (
           <div
             key={index}
-            className="flex-1 h-full items-center justify-center "
+            className="flex-1 flex flex-col items-center justify-center h-full"
           >
             <img
               alt={location.devName}
@@ -57,28 +50,29 @@ const LocationCarousel = ({ locations }) => {
                 display: "block",
                 marginLeft: "auto",
                 marginRight: "auto",
-                minWidth:"50%",
+                minWidth: "50%",
                 width: "auto",
                 height: "70%",
               }}
             />
-            <a href="/" onClick={(event) => {
-              event.preventDefault();
-              console.log('hello');
-            }}>
-              <h5 className="px-28 pt-4 text-xl font-normal tracking-tight text-gray-900 dark:text-white">
+            <a
+              href="/"
+              className="text-center mt-4"
+              onClick={(event) => {
+                event.preventDefault();
+                console.log("hello");
+              }}
+            >
+              <h5 className="pt-4 text-xl font-normal tracking-tight text-gray-900 dark:text-white">
                 Only @ {location.devName}
               </h5>
-              <div className="px-28">
-              <i className="text-center text-base font-light tracking-tight text-gray-900 dark:text-white">
+              <i className=" text-base font-light tracking-tight text-gray-900 dark:text-white">
                 {location.addrOne}
               </i>
-              </div>
-              <div className="px-28">
-              <i className="text-center text-base font-light tracking-tight text-gray-900 dark:text-white">
+              <br />
+              <i className=" text-base font-light tracking-tight text-gray-900 dark:text-white">
                 {location.addrTwo}
               </i>
-              </div>
             </a>
           </div>
         );
