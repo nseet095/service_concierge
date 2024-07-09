@@ -1,28 +1,27 @@
+
 "use client"
-import React, { useState } from "react";
-import { Inter } from "next/font/google";
+// import React, { useState } from "react";
 
 import { Button, Label, TextInput, Textarea } from "flowbite-react";
-import { PhoneNumberUtil } from 'google-libphonenumber';
-import { PhoneInput } from 'react-international-phone';
-import 'react-international-phone/style.css';
+import { lato } from "@/app/fonts";
+// import { PhoneNumberUtil } from 'google-libphonenumber';
+// import { PhoneInput } from 'react-international-phone';
+// import 'react-international-phone/style.css';
 
-const inter = Inter({ subsets: ["latin"] });
+// const phoneUtil = PhoneNumberUtil.getInstance();
 
-const phoneUtil = PhoneNumberUtil.getInstance();
-
-const isPhoneValid = (phone) => {
-  try {
-    return phoneUtil.isValidNumber(phoneUtil.parseAndKeepRawInput(phone));
-  } catch (error) {
-    return false;
-  }
-};
+// const isPhoneValid = (phone) => {
+//   try {
+//     return phoneUtil.isValidNumber(phoneUtil.parseAndKeepRawInput(phone));
+//   } catch (error) {
+//     return false;
+//   }
+// };
 
 const ContactForm = () => {
   /* TODO: POST to endpoint */
 
-  const [phone, setPhone] = useState('');
+  // const [phone, setPhone] = useState('');
 
   const submitForm = (e) => {
     e.preventDefault();
@@ -38,8 +37,8 @@ const ContactForm = () => {
 
   return (
     <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-      <h2 className="mb-4 text-4xl tracking-tight font-semibold text-center text-gray-900 dark:text-white">
-        Contact Us
+      <h2 className={`${lato.className} mb-4 text-4xl tracking-tight font-light text-center text-gray-900 dark:text-white`}>
+        CONTACT US
       </h2>
       <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
         Have an enquiry? Want to find out more? Fill out the form below and

@@ -1,18 +1,17 @@
 "use client";
 
 import TopBar from "@/components/topbar";
-import ServiceCard from "@/components/serviceCard";
 import { LuShovel } from "react-icons/lu";
 import { FaPersonShelter } from "react-icons/fa6";
 import { LuHelpingHand } from "react-icons/lu";
 import { IoHomeSharp } from "react-icons/io5";
-
-
-
 import { MdOutlineCleaningServices } from "react-icons/md";
 import { MdOutlineElectricalServices } from "react-icons/md";
 import { MdOutlinePlumbing } from "react-icons/md";
 import { FaBabyCarriage } from "react-icons/fa";
+
+import { lato } from "../fonts";
+import ServiceCard from "@/components/serviceCard";
 
 const cardData = [
   {
@@ -56,13 +55,13 @@ const cardData = [
 const Services = () => {
   return (
     <>
-      <TopBar active="services" />
+      <TopBar active="community" />
       <div className="py-6">
         {/* <h2 className="text-center pb-8 text-4xl font-semibold tracking-tight text-gray-900 dark:text-white">
           OUR SERVICES
         </h2> */}
         <div>
-          <h2 className="text-center py-4 text-4xl font-semibold tracking-tight text-gray-900 dark:text-white">
+          <h2 className={`${lato.className} text-center py-4 text-4xl font-medium tracking-tight text-gray-900 dark:text-white`}>
             GENERAL SERVICES
           </h2>
           <div className="flex gap-4 px-8 justify-center">
@@ -81,7 +80,7 @@ const Services = () => {
         </div>
       </div>
       <div>
-        <h2 className="text-center py-6 text-4xl font-semibold tracking-tight text-gray-900 dark:text-white">
+        <h2 className={`${lato.className} text-center py-6 text-4xl font-medium tracking-tight text-gray-900 dark:text-white`}>
           HOUSEHOLD SERVICES
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 justify-center px-4 pb-6 justify-items-center">

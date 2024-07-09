@@ -7,6 +7,7 @@ import { IoHomeSharp } from "react-icons/io5";
 import { FaPersonShelter } from "react-icons/fa6";
 import { LuHelpingHand } from "react-icons/lu";
 
+import { lato } from "./fonts";
 import TopBar from "@/components/topbar";
 import Title from "@/components/title";
 import ItemCard from "@/components/itemCard";
@@ -111,7 +112,16 @@ const Home = () => {
         <Title title="Only @" subtitle="Some witty quote" />
       </div>
       <div className="py-6">
-        <h5 className="text-center pb-4 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
+        <h5 className={`${lato.className} text-center text-2xl font-medium tracking-tight text-gray-900 dark:text-white`}>
+          OUR LOCATIONS
+        </h5>
+        <div className="pt-2 h-screen">
+          <LocationCarousel locations={developments} />
+        </div>
+      </div>
+
+      <div className="py-6">
+        <h5 className={`${lato.className} text-center pb-4 text-2xl font-medium tracking-tight text-gray-900 dark:text-white`}>
           OUR SERVICES
         </h5>
         <div className="py-3 px-5">
@@ -158,19 +168,11 @@ const Home = () => {
           </div>
         </div>
         <div className="py-6">
-          <h5 className="text-center text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
+          <h5 className={`${lato.className} text-center text-2xl font-medium tracking-tight text-gray-900 dark:text-white`}>
             GUEST REVIEWS
           </h5>
           <div className="pt-2 h-60 ">
             <GuestReviewsCarousel reviews={sampleReviews} />
-          </div>
-        </div>
-        <div className="py-6">
-          <h5 className="text-center text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
-          OUR LOCATIONS
-          </h5>
-          <div className="pt-2 h-screen">
-          <LocationCarousel locations={developments} />
           </div>
         </div>
       </div>

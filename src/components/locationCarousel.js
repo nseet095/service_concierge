@@ -25,8 +25,11 @@ const carouselStyle = {
     },
   },
   control: {
-    base: "inline-flex h-8 w-8 items-center justify-center rounded-full bg-gray-800/30 dark:group-hover:bg-white/50 dark:group-focus:outline-none dark:group-focus:ring-4 group-focus:ring-white dark:bg-white/30 group-hover:bg-gray-800/60 group-focus:ring-gray-800/70 sm:h-10 sm:w-10",
-    icon: "h-5 w-5 text-gray-800 dark:text-white sm:h-6 sm:w-6",
+    // base: "inline-flex h-8 w-8 items-center justify-center rounded-full bg-gray-800/30 dark:group-hover:bg-white/50 dark:group-focus:outline-none dark:group-focus:ring-4 group-focus:ring-white dark:bg-white/30 group-hover:bg-gray-800/60 group-focus:ring-gray-800/70 sm:h-10 sm:w-10",
+    // icon: "h-5 w-5 text-gray-500 dark:text-white sm:h-6 sm:w-6",
+    base: "inline-flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 group-focus:ring-gray-300 group-hover:bg-gray-300 group-focus:ring-gray-300 sm:h-10 sm:w-10",
+    icon: "h-5 w-5 text-gray-900 sm:h-6 sm:w-6",
+
   },
   scrollContainer: {
     base: "flex h-full snap-mandatory overflow-y-hidden overflow-x-scroll scroll-smooth rounded-lg",
@@ -36,12 +39,12 @@ const carouselStyle = {
 
 const LocationCarousel = ({ locations }) => {
   return (
-    <Carousel slide={false} theme={carouselStyle}>
+    <Carousel slideInterval={3000} theme={carouselStyle}>
       {locations.map((location, index) => {
         return (
           <div
             key={index}
-            className="flex-1 flex flex-col items-center justify-center h-full"
+            className="flex-1 flex flex-col items-center justify-center h-full "
           >
             <img
               alt={location.devName}

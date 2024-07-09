@@ -1,4 +1,5 @@
-import { Inter } from "next/font/google";
+
+
 import {
   DarkThemeToggle,
   ThemeModeScript,
@@ -8,11 +9,12 @@ import {
 import { BsFacebook, BsInstagram, BsTwitterX, BsYoutube } from "react-icons/bs";
 import { FaTripadvisor } from "react-icons/fa";
 
+import { jura } from "./fonts";
 import ContactForm from "@/components/contactForm";
 
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+
 
 export const metadata = {
   title: "Only @",
@@ -25,7 +27,7 @@ export default function RootLayout({ children }) {
       <head>
         <ThemeModeScript />
       </head>
-      <body className={`${inter.className} bg-slate-100 dark:bg-slate-800`}>
+      <body className={`${jura.className} bg-slate-100 dark:bg-slate-800`}>
         {children}
         <DarkThemeToggle className="fixed bottom-32 right-4 opacity-15 transition hover:opacity-100 z-10" />
 

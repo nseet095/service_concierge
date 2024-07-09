@@ -1,5 +1,6 @@
 import { Card } from "flowbite-react";
 import TopBar from "@/components/topbar";
+import { lato } from "../fonts";
 
 const AboutPage = () => {
   return (
@@ -7,7 +8,7 @@ const AboutPage = () => {
       <TopBar active="about" />
       <div className="py-6 flex-auto w-11/12 mx-auto">
         <Card className="w-80 md:w-full mx-auto">
-          <h5 className="text-center text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
+          <h5 className={`${lato.className} text-center text-2xl font-normal tracking-tight text-gray-900 dark:text-white`}>
             ABOUT US
           </h5>
           <p className="text-center font-normal text-gray-700 dark:text-gray-400">
