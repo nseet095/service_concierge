@@ -1,9 +1,10 @@
+"use client"
+
 import { Card } from "flowbite-react";
 
-const ServiceCard = ({ imgSrc, Icon, title, description, price, href }) => {
-  console.log(Icon);
+const ServiceCard = ({ imgSrc, Icon, title, description, price, href, onClick }) => {
   return (
-    <Card className="max-w-sm" href={href ? href : undefined} imgSrc={imgSrc ? imgSrc : undefined}>
+    <Card className="max-w-xs" href={href ? href : undefined} imgSrc={imgSrc ? imgSrc : undefined} onClick={onClick? onClick: undefined}>
     {Icon && <Icon size={200} className="text-gray-400 dark:text-gray-400 self-center py-2"/>}
       <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
         {title}
